@@ -86,3 +86,20 @@ git branch -M main
 git push -u origin main
 …or import code from another repository
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+---
+
+ANGULAR
+
+install Angular Cli
+npm install -g @angular/cli
+
+Create workspace:
+ng new [PROJECT NAME] // ng new client
+
+To start angular go to folder cd client
+cd client
+cpm run start
+
+Install concurrently
+npm i -D concurrently
