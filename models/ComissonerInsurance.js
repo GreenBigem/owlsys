@@ -5,37 +5,42 @@ const { Schema } = mongoose;
 // https://mongoosejs.com/docs/schematypes.html
 
 
-const UserSchema = new Schema({
+const ComissionerInsuranceSchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    name: {
+    insurance_org_name: {
         type: String,
         // reqiured требует обязательного наличия значения для свойства
-        required: false,
+        required: true,
         unique: false,
-        default: 'Аноним',
         // minlength и maxlength: задают минимальную и максимальную длину для строк
         minlength: 3,
-        maxlength: 100,
+        maxlength: 250,
 
     },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-        index: true
+    procedure_id: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Bankruptcy_procedures'
     },
-    email_verified_at: {
+    comissioner_id: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Comissioners'
+    },
+    number: {
         type: String,
         required: false,
         unique: false,
-        default: undefined
     },
-    password: {
+    date: {
+        type: Date,
+        required: false,
+        unique: false,
+    },
+    period: {
         type: String,
-        required: true,
-        unique: false
+        required: false,
+        unique: false,
     },
-    is_admin: {
+    is_additional: {
         type: Boolean,
         required: false,
         unique: false,
@@ -55,7 +60,7 @@ const UserSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('users', UserSchema)
+module.exports = mongoose.model('comissioner_insurances', ComissionerInsuranceSchema)
 
 // min и max: задают минимальное и максимальное значения для числовых данных
 // enum: строка должна представлять одно из значений в указанном массиве строк

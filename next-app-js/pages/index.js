@@ -2,6 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
+import IndexMainFooter from '../components/index/IndexMainFooter'
+
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import { Card, CardText, CardHeader, CardBody, Button } from 'reactstrap';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,21 +21,21 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
           <p>
-            Создавай документы на лету&nbsp;
-            <code className={styles.code}>pages/index.js</code>
+            Создавай юридические документы на лету...&nbsp;
+            {/* <code className={styles.code}>pages/index.js</code> */}
           </p>
           <div>
             <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
+              href="/"
+              target="_self"
               rel="noopener noreferrer"
             >
               By{' '}
               <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
+                src="/svg-ooo-fdt-image.svg"
+                alt="ООО ФДТ"
                 className={styles.vercelLogo}
-                width={100}
+                width={120}
                 height={24}
                 priority
               />
@@ -42,80 +46,24 @@ export default function Home() {
         <div className={styles.center}>
           <Image
             className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
+            src="/svg-sofia-black-image.svg"
+            alt="Sofia Logo"
+            width={320}
+            height={107}
             priority
           />
           <div className={styles.thirteen}>
             <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
+              src="/svg-v-1-0-2-image.svg"
+              alt="v1.0.2"
+              width={120}
+              height={25}
               priority
             />
           </div>
         </div>
 
-        <div className={styles.grid}>
-          <a
-            href="/registration"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Регистрация <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Для начала работу зарегистрируйся в &nbsp;Системе.
-            </p>
-          </a>
-
-          <a
-            href="/login"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Войти <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Если Вы уже зарегистрированы, то просто&nbsp;войдите в Систему!
-            </p>
-          </a>
-
-          <a
-            href="/prices"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Стоимость <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Стоимость работы в Системе дешевле Вашего &nbsp;времени.
-            </p>
-          </a>
-
-          <a
-            href="/blog"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Сообщество <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Обсуждения, улучшения, помощь, а также &nbsp;общение.
-            </p>
-          </a>
-        </div>
+        <IndexMainFooter />
       </main>
     </>
   )

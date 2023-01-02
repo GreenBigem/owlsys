@@ -5,41 +5,31 @@ const { Schema } = mongoose;
 // https://mongoosejs.com/docs/schematypes.html
 
 
-const UserSchema = new Schema({
+const BankrtuptcySroSchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
     name: {
         type: String,
-        // reqiured требует обязательного наличия значения для свойства
-        required: false,
+        required: true,
         unique: false,
-        default: 'Аноним',
-        // minlength и maxlength: задают минимальную и максимальную длину для строк
         minlength: 3,
-        maxlength: 100,
-
+        maxlength: 250,
     },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-        index: true
-    },
-    email_verified_at: {
+    address: {
         type: String,
         required: false,
         unique: false,
-        default: undefined
+        minlength: 3,
+        maxlength: 250,
     },
-    password: {
-        type: String,
-        required: true,
-        unique: false
-    },
-    is_admin: {
-        type: Boolean,
+    rosreestr_registry_number: {
+        type: Number,
         required: false,
         unique: false,
-        default: false
+    },
+    rosreestr_registry_date: {
+        type: Date,
+        required: false,
+        unique: false,
     },
     created_at: {
         type: Date,
@@ -55,7 +45,7 @@ const UserSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('users', UserSchema)
+module.exports = mongoose.model('bankruptcy_sros', BankrtuptcySroSchema)
 
 // min и max: задают минимальное и максимальное значения для числовых данных
 // enum: строка должна представлять одно из значений в указанном массиве строк
